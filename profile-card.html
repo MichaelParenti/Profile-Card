@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile Card</title>
+    <style>
+        body{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            width: 100vw;
+            height: 100vh;
+            overflow: hidden;
+            background: silver;
+        }
+        #card{
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-direction: column;
+            background: radial-gradient(silver,black);
+            font-family: Arial, Helvetica, sans-serif;
+            width:300px;
+            height:400px;
+            color: black;
+            text-shadow: 0px 0px 5px #ffffff;
+            padding: 50px;
+            text-align: center;
+        }
+        #pic{
+            position: absolute;
+            left: 50vw;
+            top: 50vh;
+            transform: translate(120px, -320px);
+        }
+        #pic:hover{
+            position: absolute;
+            left: 50vw;
+            top: 50vh;
+            transform: translate(120px, -320px) scale(1.2);
+        }
+        p{
+            font-size:22px;
+        }
+        #icons{
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            border: 5px solid black;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: inset 0 0 3px 3px black;
+        }
+        #icons:hover{
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            border: 5px solid black;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: inset 0 0 3px 3px black;
+            transform: scale(1.2);
+        }
+    </style>
+</head>
+<body>
+    <div id="card">
+        <img id="pic" src="Profile-Picture.png" height="150px" width="150px" alt="">
+        <h1>Michael Parenti</h1> 
+        <p>My name is Michael Parenti. <br> I am interested in web development, game development, and web design.</p>
+        <div id="icons">
+            <a href="https://mail.google.com/mail/u/0/?fs=1&tf=cm&source=mailto&to=mcoder3920.business@gmail.com" target="_blank"><img src="https://img.icons8.com/windows/32/000000/filled-message.png" width="40px" height="40px"/></a>
+        </div>
+        <button onclick="play();">Click Me!</button>
+    </div>
+    <script defer>
+        
+        let btn = document.querySelector("button");
+        
+        btn.addEventListener("click", () => {
+            play();
+        });
+
+        function play(){
+            const utterance = new SpeechSynthesisUtterance("This example of a pro-file card - shows how to use speechSynthesis in a web page.");
+            utterance.rate = 0.8;
+            utterance.pitch = 1;
+            speechSynthesis.speak(utterance);
+        } 
+    </script>
+</body>
+</html>
